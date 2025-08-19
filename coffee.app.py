@@ -1,15 +1,12 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 from datetime import datetime
 
 # ===============================
 # Load Trained Model
 # ===============================
-with open("coffee_sales_pipeline.pkl", "rb") as f:
-    model = pickle.load(f)
-
-
+loaded_model = joblib.load('tree_best_model.pkl')
 
 
 # ===============================
@@ -61,7 +58,7 @@ st.subheader("🔮 Prediction Result")
 
 if st.button("Predict Sales"):
     try:
-        prediction = model.predict(input_data)
+        prediction = loaded_model.predict(input_data)
         st.success(f"💰 **Predicted Sales: {prediction[0]:,.2f} currency units**")
         
         # Fancy Result Box
