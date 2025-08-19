@@ -38,7 +38,11 @@ st.sidebar.header("📌 Input Features")
 coffee_options = ["Americano", "Americano with Milk", "Cappuccino", "Cocoa", "Cortado", "Espresso", "Hot Chocolate", "Latte"]
 coffee_mapping = {name: idx for idx, name in enumerate(coffee_options)}
 
+cash_options = ["card", "cash"]
+cash_mapping = {name: idx for idx, name in enumerate(cash_options)}
+
 coffee_name = st.sidebar.selectbox("Coffee Name", coffee_options)
+cash = st.sidebar.selectbox("Payment", cash_options)
 day = st.sidebar.number_input("Day", min_value=1, max_value=31, value=15)
 month = st.sidebar.number_input("Month", min_value=1, max_value=12, value=6)
 year = st.sidebar.number_input("Year", min_value=2020, max_value=2025, value=2023)
