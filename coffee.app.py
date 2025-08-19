@@ -6,8 +6,11 @@ from datetime import datetime
 # ===============================
 # Load Trained Model
 # ===============================
-with open("decision_tree_model.pkl", "rb") as f:
-    model = pickle.load(f)
+with open("coffee_sales_pipeline.pkl", "rb") as f:
+    pipeline = pickle.load(f)
+
+
+
 
 # ===============================
 # Page Configuration
@@ -58,7 +61,7 @@ st.subheader("🔮 Prediction Result")
 
 if st.button("Predict Sales"):
     try:
-        prediction = model.predict(input_data)
+        prediction = pipeline.predict(user_inputs_df)
         st.success(f"💰 **Predicted Sales: {prediction[0]:,.2f} currency units**")
         
         # Fancy Result Box
