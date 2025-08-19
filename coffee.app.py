@@ -36,7 +36,7 @@ st.markdown(
 with st.sidebar:
     st.header('📌 Input Features')
 coffee_name_Americano = st.slider("Americano", 0, 1)
-coffee_name_Americano With Milk = st.slider("Americano with Milk", 0, 1)
+coffee_name_AmericanoMilk = st.slider("Americano with Milk", 0, 1)
 coffee_name_Cappuccino = st.slider("Cappuccino", 0, 1)
 coffee_name_Cocoa = st.slider("Cocoa", 0, 1)
 coffee_name_Cortado = st.slider("Cortado", 0, 1)
