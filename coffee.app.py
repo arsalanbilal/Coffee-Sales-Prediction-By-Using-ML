@@ -32,27 +32,25 @@ st.markdown(
 
 # ===============================
 # Sidebar Inputs
-# ===============================
-st.sidebar.header("📌 Input Features")
+# ==============================#
+with st.sidebar:
+    st.header('📌 Input Features')
+coffee_name_Americano = st.slider("Americano", 0, 1)
+coffee_name_Americano with Milk = st.slider("Americano with Milk", 0, 1)
+coffee_name_Cappuccino = st.slider("Cappuccino", 0, 1)
+coffee_name_Cocoa = st.slider("Cocoa", 0, 1)
+coffee_name_Cortado = st.slider("Cortado", 0, 1)
+coffee_name_Espresso = st.slider("Espresso", 0, 1)
+coffee_name_Hot Chocolate = st.slider("Hot Chocolate", 0, 1)
+coffee_name_Latte = st.slider("Latte", 0, 1)
+cash_type_card = st.slider("Card", 0, 1)
+cash_type_cash = st.slider("Cash", 0, 1)
+Day = st.sidebar.number_input("Day", min_value=1, max_value=31, value=15)
+Month = st.sidebar.number_input("Month", min_value=1, max_value=12, value=6)
+Year = st.sidebar.number_input("Year", min_value=2020, max_value=2025, value=2023)
+DayofWeek = st.sidebar.number_input("Day of Week", 1, 31)
 
-coffee_options = ["Americano", "Americano with Milk", "Cappuccino", "Cocoa", "Cortado", "Espresso", "Hot Chocolate", "Latte"]
-coffee_mapping = {name: idx for idx, name in enumerate(coffee_options)}
 
-cash_options = ["card", "cash"]
-cash_mapping = {name: idx for idx, name in enumerate(cash_options)}
-
-coffee_name = st.sidebar.selectbox("Coffee Name", coffee_options)
-cash = st.sidebar.selectbox("Payment", cash_options)
-day = st.sidebar.number_input("Day", min_value=1, max_value=31, value=15)
-month = st.sidebar.number_input("Month", min_value=1, max_value=12, value=6)
-year = st.sidebar.number_input("Year", min_value=2020, max_value=2025, value=2023)
-day_of_week = st.sidebar.number_input("Day of Week (1=Mon ... 7=Sun)", min_value=1, max_value=7, value=3)
-
-# Encode coffee
-coffee_encoded = coffee_mapping[coffee_name]
-
-# Prepare input
-input_data = np.array([[coffee_encoded, day, month, year, day_of_week]])
 
 # ===============================
 # Prediction Section
