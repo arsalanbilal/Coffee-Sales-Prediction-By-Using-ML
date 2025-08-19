@@ -38,7 +38,7 @@ st.markdown(
 # ===============================
 st.sidebar.header("📌 Input Features")
 
-coffee_options = ["Latte", "Espresso", "Cappuccino", "Americano", "Mocha"]
+coffee_options = ["Americano", "Americano with Milk", "Cappuccino", "Cocoa", "Cortado", "Espresso", "Hot Chocolate", "Latte"]
 coffee_mapping = {name: idx for idx, name in enumerate(coffee_options)}
 
 coffee_name = st.sidebar.selectbox("Coffee Name", coffee_options)
@@ -61,7 +61,7 @@ st.subheader("🔮 Prediction Result")
 
 if st.button("Predict Sales"):
     try:
-        prediction = model.predict(user_inputs_df)
+        prediction = model.predict(input_data)
         st.success(f"💰 **Predicted Sales: {prediction[0]:,.2f} currency units**")
         
         # Fancy Result Box
