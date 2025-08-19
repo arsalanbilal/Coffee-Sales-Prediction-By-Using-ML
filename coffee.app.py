@@ -7,7 +7,7 @@ from datetime import datetime
 # Load Trained Model
 # ===============================
 with open("coffee_sales_pipeline.pkl", "rb") as f:
-    pipeline = pickle.load(f)
+    model = pickle.load(f)
 
 
 
@@ -61,7 +61,7 @@ st.subheader("🔮 Prediction Result")
 
 if st.button("Predict Sales"):
     try:
-        prediction = pipeline.predict(user_inputs_df)
+        prediction = model.predict(user_inputs_df)
         st.success(f"💰 **Predicted Sales: {prediction[0]:,.2f} currency units**")
         
         # Fancy Result Box
