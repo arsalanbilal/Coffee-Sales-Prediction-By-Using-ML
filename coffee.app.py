@@ -34,7 +34,7 @@ input_data = np.array([[coffee_encoded, day, month, year, day_of_week]])
 
 # Predict
 if st.button("🔮 Predict Sales"):
-    prediction = loaded_model.predict(np.array([input_data]))
+    prediction = loaded_model.predict(np.array(input_data).reshape(1, -1))
     st.success(f"💰 Predicted Sales: **{prediction[0]:.2f}** currency units")
 
 # Footer
