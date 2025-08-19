@@ -30,7 +30,7 @@ coffee_mapping = {"Latte": 0, "Espresso": 1, "Cappuccino": 2, "Americano": 3, "M
 coffee_encoded = coffee_mapping[coffee_name]
 
 # Create input array
-input_data = np.array([[coffee_encoded, day, month, year, day_of_week]])
+input_data = np.array([[coffee_name_encoded, day, month, year, day_of_week]])
 
 # Predict
 if st.button("🔮 Predict Sales"):
