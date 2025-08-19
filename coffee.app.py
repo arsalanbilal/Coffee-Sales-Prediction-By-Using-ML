@@ -52,7 +52,7 @@ with st.sidebar:
 
 
 
-input_data = pd.DataFrame([[Americano,Americano_with Milk,Cappuccino,Cocoa,Cortado,Espresso,Hot Chocolate,Latte,Card,Cash,Day,Month,Year,DayofWeek]],
+input_data = pd.DataFrame([['Americano', 'Americano_with Milk', 'Cappuccino', 'Cocoa', 'Cortado', 'Espresso', 'Hot Chocolate', 'Latte', 'Card', 'Cash', 'Day', 'Month', 'Year', 'DayofWeek']],
                         columns=['coffee_name_Americano', 'coffee_name_Americano_with_Milk', 'coffee_name_Cappuccino', 'coffee_name_Cocoa', 'coffee_name_Cortado', 'coffee_name_Espresso', 
                                 'coffee_name_Hot_Chocolate', 'coffee_name_Latte', 'cash_type_card', 'cash_type_cash', 'Day', 'Month', 'Year', 'DayofWeek'])
 
