@@ -53,33 +53,29 @@ i
 st.markdown("---")
 st.subheader("🔮 Prediction Result")
 
-if st.button("Predict Sales"):
-    try:
-        prediction = loaded_model.predict(input_data)
-        st.success(f"💰 **Predicted Sales: {prediction[0]:,.2f} currency units**")
-        
-        # Fancy Result Box
-        st.markdown(
-            f"""
-            <div style="background-color:#f0f8ff;
-                        padding:20px;
-                        border-radius:15px;
-                        text-align:center;
-                        box-shadow:2px 2px 10px rgba(0,0,0,0.1);">
-                <h2 style="color:#2E86C1;">☕ {coffee_name}</h2>
-                <h3 style="color:#117A65;">📅 {day}-{month}-{year} (Day {day_of_week})</h3>
-                <h1 style="color:#B03A2E;">💰 {prediction[0]:,.2f}</h1>
-                <p><b>Estimated Sales Revenue</b></p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-    except Exception as e:
-        st.error(f"⚠️ Prediction failed: {str(e)}")
+# Predict button
+if st.button("🚀 Predict"):
+    data = pd.DataFrame([[Coffee Name, cash_type, Day, DayofWeek, Month, Year]],
+                        columns=['coffee_name', 'cash_type', 'Day', 'DayofWeek', 'Month', 'Year'])
 
-# ===============================
-# Footer
-# ===============================
-st.markdown("---")
-st.markdown("🚀 Built with Streamlit | ML Model: Decision Tree Regressor")
+    predictions = best_model.predict(data)
+
+    # Simulate a loading animation
+    with st.spinner('Calculating prediction...'):
+        time.sleep(1)
+
+    # Stylish display
+    st.success("✅ Prediction Completed!")
+    st.markdown(
+        f"""
+        <div style="background-color:#f0f8ff;padding:20px;border-radius:10px;text-align:center;">
+            <h2 style="color:#1E90FF;">Predicted Value</h2>
+            <h1 style="color:#FF4500;font-size:60px;">{predictions[0]:,.2f}</h1>
+            <p style="color:gray;">Estimated Uber demand based on provided features</p>
+        </div>
+        """, unsafe_allow_html=True
+    )
+
+    # Optional: Metric display
+    st.metric(label="📈 Predicted Uber Demand", value=f"{predictions[0]:,.2f}")
 
