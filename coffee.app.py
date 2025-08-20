@@ -3,11 +3,13 @@ import pandas as pd
 import joblib
 import numpy as np
 from datetime import datetime
+from sklearn.preprocessing import LabelEncoder
 
 # ===============================
 # Load Trained Model
 # ===============================
 best_model = joblib.load('tree_best_model.pkl')
+
 
 
 # ===============================
@@ -42,7 +44,11 @@ with st.sidebar:
     DayofWeek = st.selectbox("DayofWeek", ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
     Month = st.slider("Month", min_value = 1, max_value = 12)
     Year = st.selectbox("Year", [2024])
-    
+
+
+# Encoding tht CAtegorical Data :=
+coffee_encoded = le_coffee_name.transform(['coffee_name']) [0]
+cash_encoded = le_cash_type.transform(['cash_type']) [0]
 
 
 
@@ -55,7 +61,7 @@ st.subheader("🔮 Prediction Result")
 
 # Predict button
 if st.button("🚀 Predict"):
-    data = pd.DataFrame([[coffee_name, cash_type, Day, DayofWeek, Month, Year]],
+    data = pd.DataFrame([[coffee_encoded, cash_encoded, Day, DayofWeek, Month, Year]],
                         columns=['coffee_name', 'cash_type', 'Day', 'DayofWeek', 'Month', 'Year'])
 
     predictions = best_model.predict(data)
