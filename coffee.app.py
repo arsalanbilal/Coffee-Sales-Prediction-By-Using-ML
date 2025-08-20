@@ -36,26 +36,14 @@ st.markdown(
 # ==============================#
 with st.sidebar:
     st.header('📌 Input Features')
-    coffee_name_Americano = st.slider("Americano", 0, 1)
-    coffee_name_Americano_with_Milk = st.slider("Americano_with Milk", 0, 1)
-    coffee_name_Cappuccino = st.slider("Cappuccino", 0, 1)
-    coffee_name_Cocoa = st.slider("Cocoa", 0, 1)
-    coffee_name_Cortado = st.slider("Cortado", 0, 1)
-    coffee_name_Espresso = st.slider("Espresso", 0, 1)
-    coffee_name_Hot_Chocolate = st.slider("Hot Chocolate", 0, 1)
-    coffee_name_Latte = st.slider("Latte", 0, 1)
-    cash_type_card = st.slider("Card", 0, 1)
-    cash_type_cash = st.slider("Cash", 0, 1)
-    Day = st.sidebar.number_input("Day", min_value=1, max_value=31, value=15)
-    Month = st.sidebar.number_input("Month", min_value=1, max_value=12, value=6)
-    Year = st.sidebar.number_input("Year", min_value=2020, max_value=2025, value=2023)
-    DayofWeek = st.sidebar.number_input("Day of Week", 1, 31)
-
-
-
-input_data = pd.DataFrame([['Americano', 'Americano_with Milk', 'Cappuccino', 'Cocoa', 'Cortado', 'Espresso', 'Hot Chocolate', 'Latte', 'Card', 'Cash', 'Day', 'Month', 'Year', 'DayofWeek']],
-                        columns=['coffee_name_Americano', 'coffee_name_Americano_with_Milk', 'coffee_name_Cappuccino', 'coffee_name_Cocoa', 'coffee_name_Cortado', 'coffee_name_Espresso', 
-                                'coffee_name_Hot_Chocolate', 'coffee_name_Latte', 'cash_type_card', 'cash_type_cash', 'Day', 'Month', 'Year', 'DayofWeek'])
+    coffee_name = st.selectbox("Coffee Name", ['Americano', 'Americano with Milk', 'Cappuccino', 'Cocoa', 'Cortado', 'Espresso', 'Hot Chocolate', 'Latte']
+    cash_type = st.selectbox("Payment", ['card', 'cash']
+    Day = st.slider("Day", min_value = 1, max_value = 31)
+    DayofWeek = st.selectbox("DayofWeek", [{ 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}]
+    Month = st.slider("Month", min_value = 1, max_value = 12)
+    Year = st.selectbox("Year", [2024])
+    
+i
 
 
 
