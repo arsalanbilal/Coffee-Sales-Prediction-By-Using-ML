@@ -7,7 +7,7 @@ from datetime import datetime
 # ===============================
 # Load Trained Model
 # ===============================
-loaded_model = joblib.load('tree_best_model.pkl')
+best_model = joblib.load('tree_best_model.pkl')
 
 
 # ===============================
