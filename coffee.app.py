@@ -47,8 +47,8 @@ with st.sidebar:
 
 
 # Encoding tht CAtegorical Data :=
-coffee_encoded = coffee_name.transform(['coffee_name']) [0]
-cash_encoded = cash_type.transform(['cash_type']) [0]
+coffee_encoded = coffee_name.fit_transform(['coffee_name']) [0]
+cash_encoded = cash_type.fit_transform(['cash_type']) [0]
 
 
 
