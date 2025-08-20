@@ -39,11 +39,11 @@ with st.sidebar:
     coffee_name = st.selectbox("Coffee Name", ['Americano', 'Americano with Milk', 'Cappuccino', 'Cocoa', 'Cortado', 'Espresso', 'Hot Chocolate', 'Latte'])
     cash_type = st.selectbox("Payment", ['card', 'cash'])
     Day = st.slider("Day", min_value = 1, max_value = 31)
-    DayofWeek = st.selectbox("DayofWeek", [{ 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}])
+    DayofWeek = st.selectbox("DayofWeek", ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'}])
     Month = st.slider("Month", min_value = 1, max_value = 12)
     Year = st.selectbox("Year", [2024])
     
-i
+
 
 
 
