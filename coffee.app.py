@@ -55,7 +55,7 @@ st.subheader("🔮 Prediction Result")
 
 # Predict button
 if st.button("🚀 Predict"):
-    data = pd.DataFrame([[coffee_Name, cash_type, Day, DayofWeek, Month, Year]],
+    data = pd.DataFrame([[coffee_name, cash_type, Day, DayofWeek, Month, Year]],
                         columns=['coffee_name', 'cash_type', 'Day', 'DayofWeek', 'Month', 'Year'])
 
     predictions = best_model.predict(data)
